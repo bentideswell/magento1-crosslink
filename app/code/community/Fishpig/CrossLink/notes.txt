@@ -1,0 +1,15 @@
+/**
+ * @category Fishpig
+ * @package Fishpig_CrossLink
+ * @url http://fishpig.co.uk/magento/extensions/seo-internal-links/
+ * @author Ben Tideswell <ben@fishpig.co.uk>
+ */
+
+06/08/2016 - 2.0.0.3
+- Fixed Ajax issue
+
+18/11/2015 - 2.0.0.1
+- Fixed issue with h1 tags being linked.
+
+17/11/2015 - 2.0.0.0
+- Rewritten link generation in extension. CrossLinks no longer automatically generates a list of product, category, blog post (etc) links for automatic insertion. This method often creates 1000's of links, which slows the page request down massively. It's also unlikely that very specific product names will be matched. Instead, you can now specify custom keywords and URLs for linking in the CrossLinks configuration. You may need to reconfigure the extension in the Magento configuration area.

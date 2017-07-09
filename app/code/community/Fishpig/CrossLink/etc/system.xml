@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<config>
+	<tabs>
+		<fishpig>
+			<label>FishPig</label>
+			<sort_order>200</sort_order>
+		</fishpig>
+	</tabs>
+    <sections>
+        <crosslink>
+            <label>CrossLinks</label>
+            <tab>fishpig</tab>
+            <sort_order>300</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+            	<general>
+            		<label>Settings</label>
+            		<sort_order>1</sort_order>
+            		<show_in_default>1</show_in_default>
+            		<show_in_website>1</show_in_website>
+            		<show_in_store>1</show_in_store>            		
+            		<fields>
+            			<enabled>
+            				<label>Enabled</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+            				<sort_order>1</sort_order>
+            				<show_in_default>1</show_in_default>
+            				<show_in_website>1</show_in_website>
+            				<show_in_store>1</show_in_store>
+            			</enabled>
+            			<case_sensitive>
+            				<label>Case-Sensitive Keyword Matching</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+            				<sort_order>21</sort_order>
+            				<show_in_default>1</show_in_default>
+            				<show_in_website>1</show_in_website>
+            				<show_in_store>1</show_in_store>
+            			</case_sensitive>      			
+            		</fields>            	
+            	</general>
+            	<custom>
+            		<label><![CDATA[Keywords &amp; URLs]]></label>
+            		<sort_order>6</sort_order>
+            		<show_in_default>1</show_in_default>
+            		<show_in_website>1</show_in_website>
+            		<show_in_store>1</show_in_store>            		
+            		<fields>
+            			<keywords>
+            				<label>Custom Keywords</label>
+							<frontend_model>crosslink/system_config_form_field_keyword</frontend_model>
+							<backend_model>crosslink/system_config_backend_keyword</backend_model>
+            				<sort_order>1</sort_order>
+            				<show_in_default>1</show_in_default>
+            				<show_in_website>1</show_in_website>
+            				<show_in_store>1</show_in_store>
+            			</keywords>
+            		</fields>
+            	</custom>
+            	<target>
+            		<label><![CDATA[Target Pages &amp; Blocks to Ignore]]></label>
+            		<sort_order>11</sort_order>
+            		<show_in_default>1</show_in_default>
+            		<show_in_website>1</show_in_website>
+            		<show_in_store>1</show_in_store>            		
+            		<fields>
+            			<layout_handles>
+            				<label>Layout Handles</label>
+							<frontend_type>editor</frontend_type>
+            				<comment><![CDATA[Add each layout handle on a new line:<br/>catalog_product_view<br/>catalog_category_view<br/>wordpress_post_view<br/>attributesplash_page_view<br/>blog_post_view]]></comment>
+            				<sort_order>11</sort_order>
+            				<show_in_default>1</show_in_default>
+            				<show_in_website>1</show_in_website>
+            				<show_in_store>1</show_in_store>
+            			</layout_handles>
+            			<ignore_blocks>
+            				<label>Blocks to Ignore</label>
+							<frontend_type>editor</frontend_type>
+							<comment>Enter each block name (name in layout XML) on a new line.</comment>
+            				<sort_order>26</sort_order>
+            				<show_in_default>1</show_in_default>
+            				<show_in_website>1</show_in_website>
+            				<show_in_store>1</show_in_store>
+            			</ignore_blocks>
+            		</fields>     
+            	</target>
+            	<limit>
+            		<label>Automatic Linking Pages</label>
+            		<sort_order>16</sort_order>
+            		<show_in_default>1</show_in_default>
+            		<show_in_website>1</show_in_website>
+            		<show_in_store>1</show_in_store>            		
+            		<fields>
+            			<request>
+            				<label>Max Links per Request</label>
+            				<frontend_type>text</frontend_type>
+            				<sort_order>1</sort_order>
+            				<show_in_default>1</show_in_default>
+            				<show_in_website>1</show_in_website>
+            				<show_in_store>1</show_in_store>
+            			</request>
+            			<url>
+            				<label>Max Links per URL</label>
+            				<frontend_type>text</frontend_type>
+            				<sort_order>6</sort_order>
+            				<show_in_default>1</show_in_default>
+            				<show_in_website>1</show_in_website>
+            				<show_in_store>1</show_in_store>
+            			</url>
+            			<keyword>
+            				<label>Max Links per Keyword</label>
+            				<frontend_type>text</frontend_type>
+            				<sort_order>11</sort_order>
+            				<show_in_default>1</show_in_default>
+            				<show_in_website>1</show_in_website>
+            				<show_in_store>1</show_in_store>
+            			</keyword>
+            		</fields>            	
+            	</limit>
+            </groups>
+        </crosslink>
+    </sections>
+</config>

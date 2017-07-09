@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<config>
+	<menu>
+		<cms>
+			<children>
+				<crosslink translate="title" module="crosslink">
+					<title>CrossLinks</title>
+					<sort_order>400</sort_order>
+					<action>adminhtml/system_config/edit/section/crosslink</action>
+				</crosslink>
+			</children>
+		</cms>
+	</menu>
+	<acl>
+		<resources>
+			<admin>
+				<children>
+					<system>
+						<children>
+							<config>
+								<children>
+									<crosslink translate="label" module="crosslink">
+										<title>Cross Links by FishPig</title>
+										<sort_order>37</sort_order>
+									</crosslink>
+								</children>
+							</config>
+						</children>
+					</system>
+					<cms>
+						<children>
+							<crosslink>
+								<title>CrossLink</title>
+								<sort_order>600</sort_order>
+							</crosslink>
+						</children>
+					</cms>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+</config>
