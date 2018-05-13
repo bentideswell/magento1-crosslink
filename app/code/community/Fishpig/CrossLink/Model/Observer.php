@@ -1,11 +1,11 @@
 <?php
-/**
+/*
  * @category  Fishpig
- * @package  Fishpig_CrossLink
- * @license    http://fishpig.co.uk/license.txt
+ * @package   Fishpig_CrossLink
+ * @license   http://fishpig.co.uk/license.txt
  * @author    Ben Tideswell <help@fishpig.co.uk>
+ * @SkipObfuscation
  */
-
 class Fishpig_CrossLink_Model_Observer extends Varien_Object
 {
 	/**
@@ -29,7 +29,7 @@ class Fishpig_CrossLink_Model_Observer extends Varien_Object
 	 *
 	 * @const string
 	 */
-	 const MB_ENCODING = 'UTF-8';
+	const MB_ENCODING = 'UTF-8';
 	 
 	/**
 	 * Blocks to be skipped by CrossLinks
