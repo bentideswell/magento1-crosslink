@@ -1,3 +1,2 @@
 app/code/community/Fishpig/CrossLink app/code/community/Fishpig/CrossLink
 app/etc/modules/Fishpig_CrossLink.xml app/etc/modules/Fishpig_CrossLink.xml
-var/connect/FishPig_CrossLink.xml var/connect/FishPig_CrossLink.xml
