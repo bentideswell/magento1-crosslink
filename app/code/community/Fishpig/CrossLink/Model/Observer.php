@@ -244,6 +244,10 @@ class Fishpig_CrossLink_Model_Observer extends Varien_Object
 			$keywords = unserialize($keywords);
 
 			foreach($keywords as $keyword) {
+				if (substr($keyword['url'], 0, 1) === '/') {
+					$keyword['url'] = Mage::getUrl('', array('_direct' => ltrim($keyword['url'], '/')));
+				}
+				
 				if (!isset($links[$keyword['url']])) {
 					$links[$keyword['url']] = array();
 				}
@@ -255,7 +259,8 @@ class Fishpig_CrossLink_Model_Observer extends Varien_Object
 				}
 			}
 		}
-		
+				
+
 		if (count($links) === 0) {
 			return false;
 		}
@@ -265,17 +270,16 @@ class Fishpig_CrossLink_Model_Observer extends Varien_Object
 			parse_url(Mage::Helper('core/url')->getCurrentUrl(), PHP_URL_PATH),
 		);
 
-		
 		if (strpos($urls[0], '?') !== false) {
 			$urls[] = substr($urls[0], 0, strpos($urls[0], '?'));	
 		}
-		
+
 		foreach($urls as $url) {
 			if (isset($links[$url])) {
 				unset($links[$url]);
 			}
 		}
-		
+
 		return $links;
 	}
 	
