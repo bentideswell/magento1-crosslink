@@ -1,9 +1,12 @@
-/**
+/*
  * @category Fishpig
- * @package Fishpig_CrossLink
- * @url http://fishpig.co.uk/magento/extensions/seo-internal-links/
- * @author Ben Tideswell <ben@fishpig.co.uk>
+ * @package  Fishpig_CrossLink
+ * @url      https://fishpig.co.uk/magento/extensions/seo-internal-links/
+ * @author   Ben Tideswell <ben@fishpig.co.uk>
  */
+
+07/08/2018 - 2.0.0.7
+- Fixed issue with third party modules that use non-Prototype Ajax requests
 
 28/07/2018 - 2.0.0.6
 - Added store code into relative URLs

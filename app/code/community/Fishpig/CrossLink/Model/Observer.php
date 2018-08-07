@@ -490,6 +490,6 @@ class Fishpig_CrossLink_Model_Observer extends Varien_Object
 	**/	
 	public function isAjaxRequest()
 	{
-		return isset($_GET['isAjax']) || isset($_GET['isLayerAjax']);
+		return isset($_GET['isAjax']) || isset($_GET['isLayerAjax']) || isset($_GET['ajax']);
 	}
 }
