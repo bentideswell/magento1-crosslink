@@ -89,7 +89,7 @@ class Fishpig_CrossLink_Model_Observer extends Varien_Object
 			$transport = $observer->getEvent()->getTransport();
 			
 			$transport->setHtml(
-				self::SKIP_TAG_START . $transport->getHtml() . self::SKIP_TAG_END
+				self::SKIP_TAG_START . '<!-- ' . $observer->getEvent()->getBlock()->getNameInLayout() . ' -->' . $transport->getHtml() . self::SKIP_TAG_END
 			);
 		}
 		

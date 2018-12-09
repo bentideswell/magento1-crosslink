@@ -20,36 +20,30 @@ class Fishpig_CrossLink_Model_System_Config_Backend_Keyword extends Mage_Adminht
 		
 		if ($values && is_array($values) && count($values) > 0) {
 			$sorted = array();
-			$empty = array();
-
-			while(count($values) > 0) {
-				$lval = null;
-				$lkey = null;
-
-				foreach($values as $id => $value) {
-					if (!isset($value['sort_order']) || trim($value['sort_order']) === '') {
-						$empty[$id] = $value;
-						unset($values[$id]);
-					}
-					else if (is_null($lkey) || (int)$value['sort_order'] < $lval) {
-						$lval = (int)$value['sort_order'];
-						$lkey = $id;
-					}
+			$final  = array();
+			
+			foreach($values as $key => $value) {
+				if (!$value) {
+					continue;
 				}
 				
-				if (!is_null($lkey)) {
-					$sorted[$lkey] = $values[$lkey];
-					unset($values[$lkey]);
+				$value['sort_order'] = (int)$value['sort_order'];
+				
+				if (!isset($sorted[$value['sort_order']])) {
+					$sorted[$value['sort_order']] = array();
+				}
+				
+				$sorted[$value['sort_order']][] = $value;
+			}			
+			foreach($sorted as $order => $values) {
+				foreach($values as $value) {
+					$final[] = $value;
 				}
 			}
 			
-			if (count($empty) > 0) {
-				$sorted = array_merge($sorted, $empty);
-			}
+			$this->setValue($final);
 		}
 
-		$this->setValue($sorted);
-		
 		return parent::_beforeSave();
 	}
 }
